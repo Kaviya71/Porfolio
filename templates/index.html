@@ -40,13 +40,14 @@
     <section id="hero" class="hero">
         <div class="hero-container">
             <div class="hero-content">
-                <p class="greeting">Hi, I am</p>
-                <h1 class="name">Kaviya Karthikeyan.</h1>
+                <p class="greeting">Hi, my name is</p>
+                <h1 class="name">Kaviya K.</h1>
                 <h2 class="role">ECE Student | Data Analytics Intern | AI Enthusiast</h2>
                 <p class="hero-desc">I build intelligent solutions, analyze data, and create compelling content.</p>
                 <div class="hero-buttons">
                     <a href="#projects" class="btn btn-primary">View Projects</a>
-                    <a href="{{ url_for('static', filename='Kaviya_Resume.pdf') }}" download="Kaviya_Resume.pdf" class="btn btn-secondary"><i class="fa-solid fa-download"></i> Download Resume</a>
+                    <a href="{{ url_for('static', filename='Kaviya_Resume.pdf') }}" download="Kaviya_Resume.pdf"
+                        class="btn btn-secondary"><i class="fa-solid fa-download"></i> Download Resume</a>
                 </div>
             </div>
 
@@ -144,15 +145,18 @@
         <section id="contact" class="section">
             <h2 class="section-title">Get In Touch</h2>
             <div class="contact-card card">
-                <p>I'm currently looking for new opportunities. Whether you have a question or just want to connect, send me a message below!</p>
-                
+                <p>I'm currently looking for new opportunities. Whether you have a question or just want to connect,
+                    send me a message below!</p>
+
                 <!-- The Contact Form! -->
                 <!-- Make sure to replace YOUR_ENDPOINT with the code you get from Formspree.io -->
                 <form action="https://formspree.io/f/YOUR_ENDPOINT" method="POST" class="contact-form">
                     <input type="text" name="name" class="form-input" placeholder="Your Name" required>
                     <input type="email" name="email" class="form-input" placeholder="Your Email" required>
-                    <textarea name="message" class="form-input form-textarea" placeholder="Your Question or Message..." required></textarea>
-                    <button type="submit" class="btn btn-primary"><i class="fa-solid fa-paper-plane"></i> Send Message</button>
+                    <textarea name="message" class="form-input form-textarea" placeholder="Your Question or Message..."
+                        required></textarea>
+                    <button type="submit" class="btn btn-primary"><i class="fa-solid fa-paper-plane"></i> Send
+                        Message</button>
                 </form>
 
                 <br><br>
