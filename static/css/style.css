@@ -1,0 +1,465 @@
+/* ========================================= */
+/* CSS VARIABLES & GLOBALS                   */
+/* ========================================= */
+:root {
+    --bg-color: #0f172a;        /* Sleek Slate Dark */
+    --surface-color: #1e293b;   /* Lighter Slate */
+    --text-main: #f8fafc;       /* Crisp White */
+    --text-muted: #94a3b8;      /* Soft Slate */
+    --accent: #3b82f6;          /* Bright Blue */
+    --accent-hover: #2563eb;    /* Darker Blue */
+    --accent-glow: rgba(59, 130, 246, 0.4);
+    
+    --font-heading: 'Poppins', sans-serif;
+    --font-body: 'Inter', sans-serif;
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+html {
+    scroll-behavior: smooth; /* Glides to sections smoothly */
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    font-family: var(--font-body);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* ========================================= */
+/* TYPOGRAPHY                                */
+/* ========================================= */
+h1, h2, h3, h4 {
+    font-family: var(--font-heading);
+    margin: 0;
+    color: var(--text-main);
+}
+
+.section-title {
+    font-size: 2.2rem;
+    margin-bottom: 2rem;
+    position: relative;
+    display: inline-block;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 60%;
+    height: 4px;
+    background: var(--accent);
+    border-radius: 4px;
+}
+
+/* ========================================= */
+/* NAVBAR (Fixed & Glassmorphism)            */
+/* ========================================= */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(15, 23, 42, 0.85); /* Semi-transparent */
+    backdrop-filter: blur(10px); /* Frosted glass effect */
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.nav-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 1.2rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-decoration: none;
+    color: var(--text-main);
+}
+
+.logo span {
+    color: var(--accent);
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-muted);
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: var(--transition);
+}
+
+.nav-links a:hover {
+    color: var(--accent);
+}
+
+/* ========================================= */
+/* HERO SECTION & ANIMATIONS                 */
+/* ========================================= */
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.hero-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4rem;
+    width: 100%;
+    margin-top: 4rem; /* Accounts for fixed navbar */
+}
+
+.hero-content {
+    animation: fadeInUp 1s ease-out forwards;
+    flex: 1; /* Takes up 50% width */
+}
+
+.hero-image {
+    flex: 1; /* Takes up 50% width */
+    display: flex;
+    justify-content: flex-end;
+    opacity: 0;
+    animation: fadeInUp 1s ease-out 0.3s forwards; /* Fades in slightly after the text */
+}
+
+.hero-image img {
+    width: 300px;
+    height: auto;
+    /* We removed the CSS border-radius and border because your JPEG image already has a perfect blue circle drawn on it! */
+    filter: drop-shadow(0 10px 20px rgba(59, 130, 246, 0.2)); 
+}
+
+.greeting {
+    color: var(--accent);
+    font-family: var(--font-body);
+    font-weight: 600;
+    margin-bottom: 1rem;
+    letter-spacing: 1px;
+}
+
+.name {
+    font-size: 4.5rem;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 1rem;
+    /* Gradient text effect */
+    background: linear-gradient(to right, #ffffff, #94a3b8);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.role {
+    font-size: 1.8rem;
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+}
+
+.hero-desc {
+    color: var(--text-muted);
+    max-width: 500px;
+    font-size: 1.1rem;
+    margin-bottom: 2.5rem;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.btn {
+    text-decoration: none;
+    padding: 0.8rem 1.8rem;
+    border-radius: 6px;
+    font-weight: 600;
+    font-family: var(--font-body);
+    transition: var(--transition);
+    border: 2px solid var(--accent);
+}
+
+.btn-primary {
+    background: var(--accent);
+    color: white;
+}
+
+.btn-primary:hover {
+    background: var(--accent-hover);
+    border-color: var(--accent-hover);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px var(--accent-glow);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: var(--accent);
+}
+
+.btn-secondary:hover {
+    background: rgba(59, 130, 246, 0.1);
+    transform: translateY(-3px);
+}
+
+/* ========================================= */
+/* MAIN CONTENT STRUCURE                     */
+/* ========================================= */
+main {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.section {
+    padding: 80px 0;
+}
+
+/* Generic Interactive Card Styles */
+.card {
+    background: var(--surface-color);
+    border-radius: 12px;
+    padding: 2.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.05); /* Very subtle border */
+    transition: var(--transition);
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+    border-color: rgba(59, 130, 246, 0.3); /* Glow border on hover */
+}
+
+/* Remove default P margins */
+.about-content p {
+    color: var(--text-muted);
+    font-size: 1.05rem;
+    margin-bottom: 1.2rem;
+}
+.about-content p:last-child {
+    margin-bottom: 0;
+}
+
+/* ========================================= */
+/* SKILLS GRID (Cards + Icons)               */
+/* ========================================= */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+}
+
+.skill-card {
+    background: var(--surface-color);
+    padding: 2rem;
+    border-radius: 12px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: var(--transition);
+}
+
+.skill-card:hover {
+    transform: translateY(-5px);
+    background: rgba(59, 130, 246, 0.05);
+    border-color: var(--accent);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.skill-icon {
+    font-size: 3rem;
+    color: var(--accent);
+    margin-bottom: 1rem;
+}
+
+.skill-card h3 {
+    font-size: 1.1rem;
+}
+
+/* ========================================= */
+/* TIMELINE (Experience/Certifications)      */
+/* ========================================= */
+.timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.timeline-date {
+    color: var(--accent);
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.timeline-item h4 {
+    color: var(--text-muted);
+    font-size: 1rem;
+    font-weight: 400;
+    margin-bottom: 1rem;
+}
+
+.timeline-item p {
+    color: var(--text-muted);
+    margin: 0;
+}
+
+/* ========================================= */
+/* PROJECTS CARDS                            */
+/* ========================================= */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.project-card {
+    padding: 2.5rem 2rem;
+    position: relative;
+}
+
+.project-content h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.project-desc {
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+}
+
+.project-tech {
+    display: flex;
+    gap: 1rem;
+    font-size: 0.85rem;
+    color: var(--accent);
+    margin-bottom: 1.5rem;
+    font-family: monospace;
+}
+
+.project-tech span {
+    background: rgba(59, 130, 246, 0.1);
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
+}
+
+.project-link {
+    color: var(--text-muted);
+    font-size: 1.2rem;
+    transition: var(--transition);
+}
+
+.project-link:hover {
+    color: var(--accent);
+}
+
+/* ========================================= */
+/* CONTACT CARD                              */
+/* ========================================= */
+.contact-card {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contact-card p {
+    color: var(--text-muted);
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.social-icons a {
+    color: var(--text-muted);
+    font-size: 1.8rem;
+    transition: var(--transition);
+}
+
+.social-icons a:hover {
+    color: var(--accent);
+    transform: translateY(-5px);
+}
+
+/* ========================================= */
+/* FOOTER                                    */
+/* ========================================= */
+footer {
+    text-align: center;
+    padding: 2rem;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+/* ========================================= */
+/* RESPONSIVE DESIGN (MOBILE ADAPTATION)     */
+/* ========================================= */
+@media (max-width: 768px) {
+    /* Hide nav links on very small screens to keep it clean */
+    .nav-links {
+        display: none; 
+    }
+    .name {
+        font-size: 3rem;
+    }
+    .role {
+        font-size: 1.4rem;
+    }
+    .hero-container {
+        flex-direction: column-reverse; /* Puts image above text! */
+        text-align: center;
+        gap: 2rem;
+        margin-top: 6rem;
+    }
+    .hero-image {
+        justify-content: center;
+    }
+    .hero-image img {
+        width: 250px;
+        height: 250px;
+    }
+    .hero-buttons {
+        flex-direction: column;
+        width: 100%;
+    }
+    .btn {
+        text-align: center;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    .section {
+        padding: 50px 0;
+    }
+    .project-tech {
+        flex-wrap: wrap; /* Allows skills to wrap to new line on mobile */
+    }
+}

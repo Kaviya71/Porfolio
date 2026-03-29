@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kaviya K - Developer Portfolio</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- CSS -->
+    <!-- Notice ?v=13 to bust the browser cache! -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}?v=13">
+    <!-- Favicon -->
+    <link rel="icon" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="50" fill="%233b82f6"/><text x="50" y="75" text-anchor="middle" font-size="75" font-family="Arial, sans-serif" font-weight="bold" fill="white">K</text></svg>'>
+</head>
+<body>
+    <!-- Fixed Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-content">
+            <a href="#hero" class="logo">Kaviya<span>.</span></a>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Animated Hero Section -->
+    <section id="hero" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <p class="greeting">Hi, my name is</p>
+                <h1 class="name">Kaviya Karthikeyan.</h1>
+                <h2 class="role">ECE Student | Data Analytics Intern | AI Enthusiast</h2>
+                <p class="hero-desc">I build intelligent solutions, analyze data, and create compelling content.</p>
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn btn-primary">View Projects</a>
+                    <a href="#contact" class="btn btn-secondary">Contact Me</a>
+                </div>
+            </div>
+            
+            <div class="hero-image">
+                <!-- Pointing to your custom image filename! -->
+                <!-- Please make sure to put the file directly inside the "static" folder so Flask can find it. -->
+                <img src="{{ url_for('static', filename='Kaviya.img.jpeg') }}" alt="Kaviya Karthikeyan">
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content wrapper -->
+    <main>
+        <!-- About Section -->
+        <section id="about" class="section">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content card">
+                <p>Hello! I am an Electronics and Communication Engineering (ECE) student at Sathyabama Institute of Science and Technology (CGPA: 9.6), deeply passionate about technology, analytics, and aerospace. I am currently working on <strong>Edeal</strong>, an exciting college project dedicated to building rockets!</p>
+                <p>On campus, I proudly serve as an <strong>Executive Member of the ISTE Club</strong>, fostering technical innovation among my peers. Beyond engineering, I am a dedicated public speaker and writer—especially of Tamil Kavithai. From being a School Topper (97% in 10th) to interning in data analytics, I bring a unique blend of rapid technical problem-solving and creative communication to everything I do.</p>
+            </div>
+        </section>
+
+        <!-- Skills Grid Cards -->
+        <section id="skills" class="section">
+            <h2 class="section-title">My Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <i class="fa-brands fa-python skill-icon"></i>
+                    <h3>Python</h3>
+                </div>
+                <div class="skill-card">
+                    <i class="fa-solid fa-code skill-icon"></i>
+                    <h3>C Programming</h3>
+                </div>
+                <div class="skill-card">
+                    <i class="fa-solid fa-network-wired skill-icon"></i>
+                    <h3>DSA</h3>
+                </div>
+                <div class="skill-card">
+                    <i class="fa-solid fa-brain skill-icon"></i>
+                    <h3>Generative AI</h3>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience & Certifications Timeline -->
+        <section id="experience" class="section">
+            <h2 class="section-title">Experience & Certifications</h2>
+            <div class="timeline">
+                <div class="timeline-item card">
+                    <div class="timeline-date">Dec 2025 - Jan 2026</div>
+                    <h3>Data Analytics Intern</h3>
+                    <h4>KultureHire</h4>
+                    <p>Analyzed datasets and built interactive visualizations to extract business insights.</p>
+                </div>
+                <div class="timeline-item card">
+                    <div class="timeline-date">NPTEL</div>
+                    <h3>Data Science & Python Programming</h3>
+                    <h4>Certifications</h4>
+                    <p>Completed intensive training in Data Science and Python programming fundamentals.</p>
+                </div>
+                <div class="timeline-item card">
+                    <div class="timeline-date">Various</div>
+                    <h3>Public Speaking & Gen AI</h3>
+                    <h4>Certifications</h4>
+                    <p>Demonstrated strong communication skills and foundational knowledge in Generative AI architectures.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dynamic Projects Cards Section -->
+        <section id="projects" class="section">
+            <h2 class="section-title">Featured Projects</h2>
+            <div class="projects-grid">
+                <!-- Project 1: Personal Portfolio -->
+                <div class="project-card card">
+                    <div class="project-content">
+                        <h3>Modern Developer Portfolio</h3>
+                        <p class="project-desc">A fully responsive, animated developer portfolio built from scratch with a glassmorphism navbar, custom CSS hover animations, and a sleek dark-mode aesthetic. Served locally using a Python Flask backend.</p>
+                        <div class="project-tech">
+                            <span>HTML5</span> <span>CSS3</span> <span>Python</span> <span>Flask</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-card card">
+                <p>I'm currently looking for new opportunities. Whether you have a question or just want to connect, I'll try my best to get back to you!</p>
+                <div class="contact-links">
+                    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=kaviyakarthi71@gmail.com" target="_blank" class="btn btn-primary"><i class="fa-solid fa-envelope"></i> Say Hello</a>
+                </div>
+                <br>
+                <div class="social-icons">
+                    <a href="https://www.linkedin.com/in/kaviya-k71" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="https://github.com/kaviya71" target="_blank"><i class="fa-brands fa-github"></i></a>
+                    <a href="https://leetcode.com/u/Kaviya_K71/" target="_blank"><i class="fa-solid fa-code"></i></a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>Designed & Built by Kaviya</p>
+    </footer>
+</body>
+</html>
