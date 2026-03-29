@@ -14,8 +14,8 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- CSS -->
-    <!-- Notice ?v=13 to bust the browser cache! -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}?v=13">
+    <!-- Notice ?v=14 to bust the browser cache! -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}?v=14">
     <!-- Favicon -->
     <link rel="icon"
         href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="50" fill="%233b82f6"/><text x="50" y="75" text-anchor="middle" font-size="75" font-family="Arial, sans-serif" font-weight="bold" fill="white">K</text></svg>'>
@@ -148,13 +148,18 @@
         <section id="contact" class="section">
             <h2 class="section-title">Get In Touch</h2>
             <div class="contact-card card">
-                <p>I'm currently looking for new opportunities. Whether you have a question or just want to connect,
-                    I'll try my best to get back to you!</p>
-                <div class="contact-links">
-                    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=kaviyakarthi71@gmail.com" target="_blank"
-                        class="btn btn-primary"><i class="fa-solid fa-envelope"></i> Say Hello</a>
-                </div>
-                <br>
+                <p>I'm currently looking for new opportunities. Whether you have a question or just want to connect, send me a message below!</p>
+                
+                <!-- The Contact Form! -->
+                <!-- Make sure to replace YOUR_ENDPOINT with the code you get from Formspree.io -->
+                <form action="https://formspree.io/f/YOUR_ENDPOINT" method="POST" class="contact-form">
+                    <input type="text" name="name" class="form-input" placeholder="Your Name" required>
+                    <input type="email" name="email" class="form-input" placeholder="Your Email" required>
+                    <textarea name="message" class="form-input form-textarea" placeholder="Your Question or Message..." required></textarea>
+                    <button type="submit" class="btn btn-primary"><i class="fa-solid fa-paper-plane"></i> Send Message</button>
+                </form>
+
+                <br><br>
                 <div class="social-icons">
                     <a href="https://www.linkedin.com/in/kaviya-k71" target="_blank"><i
                             class="fa-brands fa-linkedin-in"></i></a>
